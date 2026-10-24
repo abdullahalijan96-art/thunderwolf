@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thunder Wolf Registration & ID Card</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#0b0b0d;--panel:#121216;--in:#17171c;--gold:#f2b51d;--tx:#eee;--mu:#9a9aa3;--ok:#1fa35a;--no:#d23c3c;--wa:#c98a12}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 50% 0,#2a2208 0,var(--bg) 45%);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:15px;min-height:100vh}
+.wrap{max-width:680px;margin:0 auto;padding:16px}
+.logo{text-align:center;margin:8px 0 14px}
+.logo .tag{display:flex;justify-content:space-between;font-size:10px;letter-spacing:3px;color:#ccc}
+.logo h1{margin:6px 0 0;font-size:clamp(34px,10vw,56px);font-style:italic;font-weight:900;letter-spacing:1px;line-height:1}
+.logo h1 b{color:var(--gold)}
+.badge{display:inline-block;border:1px solid var(--gold);padding:6px 22px;letter-spacing:4px;font-weight:700;font-size:14px;margin-top:10px;clip-path:polygon(8px 0,calc(100% - 8px) 0,100% 50%,calc(100% - 8px) 100%,8px 100%,0 50%)}
+.panel{border:1px solid var(--gold);background:var(--panel);padding:16px;border-radius:6px;margin-bottom:12px}
+.f{margin-bottom:12px}
+.f label{display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px}
+.ic{width:26px;height:26px;border:1px solid var(--gold);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px}
+input[type=text],input[type=tel],input[type=email],input[type=number]{width:100%;padding:11px;background:var(--in);border:1px solid #6b5412;border-radius:8px;color:var(--tx);font:inherit}
+input:focus{outline:1px solid var(--gold)}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px}
+.three .f{border:1px solid #6b5412;border-radius:6px;padding:10px;margin:0}
+.mid{display:flex;gap:14px;flex-wrap:wrap}
+.mid .col{flex:1 1 280px}
+.photo{flex:0 0 160px;margin:0 auto;border:1px solid var(--gold);border-radius:6px;text-align:center;padding:10px;font-size:11px;letter-spacing:1px;cursor:pointer;height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;border-radius:4px}
+.silh{width:70px;height:70px;border-radius:50%;background:#888}
+.agree{border:1px solid var(--gold);border-radius:6px;padding:12px;font-size:13px;line-height:1.55;margin:6px 0 12px}
+.agree h3{margin:0 0 6px;font-size:14px;letter-spacing:1px}
+.chk{display:flex;gap:8px;align-items:flex-start;margin-top:10px;font-size:13px}
+.chk input{margin-top:3px;accent-color:var(--gold)}
+.sub{width:100%;background:var(--gold);color:#111;border:0;padding:13px;border-radius:8px;font-weight:800;letter-spacing:2px;font-size:15px;cursor:pointer}
+.foot{text-align:center;color:var(--gold);font-style:italic;font-weight:700;margin-top:14px;font-size:13px}
+.err{color:#ff7a7a;font-size:13px;margin:6px 0}
+.hide{display:none}
+.msg{text-align:center;padding:36px 10px}
+.item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #2a2a30;cursor:pointer}
+.item img,.item .th{width:42px;height:42px;border-radius:6px;object-fit:cover;background:#333;flex:0 0 42px}
+.item .nm{flex:1;min-width:0}.item small{color:var(--mu)}
+.b{font-size:11px;padding:3px 8px;border-radius:99px;color:#fff;white-space:nowrap}
+.Pending{background:var(--wa)}.Selected{background:var(--ok)}.Rejected{background:var(--no)}
+.tools{display:flex;gap:8px;margin-bottom:10px}.tools input,.tools select{flex:1}
+select{padding:10px;background:var(--in);color:var(--tx);border:1px solid #6b5412;border-radius:8px}
+.kv{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid #2a2a30;font-size:14px}
+.kv span:first-child{color:var(--mu)}
+.acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.acts button{flex:1;padding:10px;border:0;border-radius:8px;color:#fff;font-size:13px;cursor:pointer}
+.dp{width:120px;height:150px;object-fit:cover;border:1px solid var(--gold);border-radius:6px;float:right;margin:0 0 8px 10px}
+h2{margin:0 0 12px;font-size:18px;color:var(--gold)}
+.back{border:0;background:none;color:var(--gold);padding:0;margin-bottom:10px;cursor:pointer}
+.qa{display:flex;gap:6px;width:100%;margin-top:2px}
+.qa button{flex:1;padding:8px 4px;border:0;border-radius:6px;color:#fff;font-size:13px;font-weight:600;opacity:.8;cursor:pointer}
+.qa button.on{opacity:1;outline:2px solid #fff}
+#toast{display:none;position:fixed;left:50%;transform:translateX(-50%);bottom:24px;background:#fff;color:#111;padding:10px 18px;border-radius:99px;font-size:14px;font-weight:600;z-index:99;box-shadow:0 4px 14px #0008}
+</style></head><body>
+<div class="wrap">
+<div class="logo"><div class="tag"><span>STRONGER<br>TOGETHER</span><span style="text-align:right">ONE PACK<br>ONE MISSION</span></div>
+<h1 onclick="tapLogo()">THUNDER <b>WOLF</b></h1><div class="badge">REGISTRATION FORM</div></div>
+
+<div id="cand">
+<div class="panel" id="formBox">
+ <div class="f"><label><span class="ic">👤</span>Name</label><input type="text" id="f_name"></div>
+ <div class="f"><label><span class="ic">🏢</span>Sector Name</label><input type="text" id="f_sector"></div>
+ <div class="three">
+  <div class="f"><label>⚡ Thunder 1st</label><input type="text" id="f_t1"></div>
+  <div class="f"><label>⚡ Thunder 2nd</label><input type="text" id="f_t2"></div>
+  <div class="f"><label>⚡ Thunder 3rd</label><input type="text" id="f_t3"></div>
+ </div>
+ <div class="mid">
+  <div class="col">
+   <div class="f"><label><span class="ic">👥</span>Father Name</label><input type="text" id="f_father"></div>
+   <div class="f"><label><span class="ic">📞</span>Phone Number</label><input type="tel" id="f_phone"></div>
+   <div class="f"><label><span class="ic">✉️</span>Email</label><input type="email" id="f_email"></div>
+   <div class="f"><label><span class="ic">🪪</span>ID Number</label><input type="text" id="f_idno"></div>
+   <div class="f"><label><span class="ic">🪙</span>Registration Fee</label><input type="text" id="f_fee"></div>
+   <div class="f"><label><span class="ic">💳</span>Current Payment</label><input type="text" id="f_pay"></div>
+  </div>
+  <label class="photo" for="pf" id="pbox"><div class="silh"></div>PASSPORT SIZE<br>PICTURE<br><span style="color:var(--gold)">(tap to upload)</span></label>
+  <input type="file" id="pf" accept="image/*" style="position:absolute;opacity:0;width:1px;height:1px;pointer-events:none" onchange="pick(this)">
+ </div>
+ <div class="agree"><h3>🤝 AGREES:</h3>I, hereby, agree that I am joining this group for the reason of respecting the leaders of Thunder Wolf and the kindness of the group. I am fully aware that the entire Union Group and all Thunders are my supporters and not affected by me.
+ <label class="chk"><input type="checkbox" id="f_agree"> I agree to the above</label></div>
+ <div class="f"><label><span class="ic">✏️</span>Signature (apna naam likhein)</label><input type="text" id="f_sign"></div>
+ <div class="err" id="ferr"></div>
+ <button class="sub" onclick="submitForm()">SUBMIT</button>
+ <div class="foot">THUNDER WOLF — FAMILY IS FOREVER</div>
+</div>
+<div class="panel msg hide" id="thanks"><h2>Shukriya!</h2><p>Aap ka form submit ho gaya hai.</p></div>
+</div>
+
+<div id="login" class="hide"><div class="panel"><h2>Admin Login</h2>
+ <div class="f"><label>Password</label><input type="text" id="pw" style="-webkit-text-security:disc"></div>
+ <div class="err" id="lerr"></div><button class="sub" onclick="login()">LOGIN</button></div></div>
+
+<div id="admin" class="hide"><div class="panel"><h2>Submitted Forms <span id="cnt" style="color:var(--mu);font-size:14px"></span></h2>
+ <div class="tools"><input type="text" id="q" placeholder="Search naam / ID / phone" oninput="renderList()">
+ <select id="sf" onchange="renderList()"><option>All</option><option>Pending</option><option>Selected</option><option>Rejected</option></select></div>
+ <div id="list"></div>
+ <div class="acts">
+  <button style="background:#2b6cb0" onclick="exportCSV()">Backup CSV</button>
+  <button style="background:#2b6cb0" onclick="exportJSON()">Backup JSON</button>
+  <button style="background:var(--gold);color:#111" onclick="logout()">Logout</button></div>
+ </div></div>
+
+<div id="detail" class="hide"><div class="panel"><button class="back" onclick="go('admin')">&larr; Wapas</button>
+ <div id="dbody"></div>
+ <div class="acts">
+  <button style="background:var(--wa)" data-s="Pending" onclick="setSt('Pending')">Pending</button>
+  <button style="background:var(--ok)" data-s="Selected" onclick="setSt('Selected')">Selected</button>
+  <button style="background:var(--no)" data-s="Rejected" onclick="setSt('Rejected')">Rejected</button>
+  <button style="background:#2b6cb0" onclick="printIDCard()">Print ID Card</button>
+  <button id="delb" style="background:#555" onclick="del()">Delete</button></div></div></div>
+</div>
+<div id="toast"></div>
+<script>
+const F=[["name","Name"],["sector","Sector Name"],["t1","Thunder 1st"],["t2","Thunder 2nd"],["t3","Thunder 3rd"],["father","Father Name"],["phone","Phone Number"],["email","Email"],["idno","ID Number"],["fee","Registration Fee"],["pay","Current Payment"],["sign","Signature"]];
+let mem={forms:[]},cur=null,authed=false,photo="";
+try{const s=localStorage.getItem("tw");if(s)mem=JSON.parse(s)}catch(e){}
+function save(){try{localStorage.setItem("tw",JSON.stringify(mem))}catch(e){}}
+const $=id=>document.getElementById(id);
+const esc=t=>String(t==null?"":t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function pick(inp){const f=inp.files&&inp.files[0];if(!f)return;$("ferr").textContent="";
+ const r=new FileReader();
+ r.onload=e=>{const im=new Image();
+  im.onload=()=>{const w=300,h=Math.round(im.height*w/im.width),c=document.createElement("canvas");c.width=w;c.height=h;c.getContext("2d").drawImage(im,0,0,w,h);photo=c.toDataURL("image/jpeg",.7);$("pbox").innerHTML='<img src="'+photo+'">'};
+  im.src=e.target.result};
+ r.readAsDataURL(f);inp.value=""}
+function go(v){["cand","login","admin","detail"].forEach(x=>$(x).classList.add("hide"));
+ if(v=="login"&&authed)v="admin";if(v=="admin"&&!authed)v="login";
+ $(v).classList.remove("hide");
+ if(v=="cand"){$("formBox").classList.remove("hide");$("thanks").classList.add("hide")}
+ if(v=="admin")renderList()}
+function submitForm(){const d={id:Date.now(),status:"Pending",at:new Date().toLocaleString(),photo:photo};
+ for(const f of F){d[f[0]]=$("f_"+f[0]).value.trim();if(!d[f[0]]){$("ferr").textContent="Barah-e-karam "+f[1]+" likhain.";return}}
+ if(!photo){$("ferr").textContent="Passport size picture upload karein.";return}
+ if(!$("f_agree").checked){$("ferr").textContent="Agrees par tick karein.";return}
+ $("ferr").textContent="";mem.forms.push(d);save();clearForm();$("formBox").classList.add("hide");$("thanks").classList.remove("hide");setTimeout(()=>{if(!$("cand").classList.contains("hide"))go("cand")},3500)}
+function clearForm(){photo="";F.forEach(f=>$("f_"+f[0]).value="");$("f_agree").checked=false;$("pbox").innerHTML='<div class="silh"></div>PASSPORT SIZE<br>PICTURE<br><span style="color:var(--gold)">(tap to upload)</span>'}
+let taps=0,tt;function tapLogo(){taps++;clearTimeout(tt);tt=setTimeout(()=>taps=0,2000);if(taps>=5){taps=0;go("login")}}
+function logout(){authed=false;$("pw").value="";go("cand")}
+function login(){if($("pw").value=="ali001Qaisar"){authed=true;$("lerr").textContent="";go("admin")}else $("lerr").textContent="Password ghalat hai."}
+function renderList(){const q=$("q").value.toLowerCase(),s=$("sf").value;
+ const L=mem.forms.filter(d=>(s=="All"||d.status==s)&&(d.name+d.idno+d.phone).toLowerCase().includes(q));
+ $("cnt").textContent="("+mem.forms.length+")";
+ $("list").innerHTML=L.length?L.map(d=>`<div class="item" onclick="openD(${d.id})">${d.photo?`<img src="${d.photo}">`:'<div class="th"></div>'}<div class="nm"><b>${esc(d.name)}</b><br><small>${esc(d.sector)} · ${esc(d.at)}</small></div><span class="b ${d.status}">${d.status}</span><div class="qa" onclick="event.stopPropagation()"><button class="${d.status=="Pending"?"on":""}" style="background:var(--wa)" onclick="quick(${d.id},'Pending')">Pending</button><button class="${d.status=="Selected"?"on":""}" style="background:var(--ok)" onclick="quick(${d.id},'Selected')">Selected</button><button class="${d.status=="Rejected"?"on":""}" style="background:var(--no)" onclick="quick(${d.id},'Rejected')">Reject</button></div></div>`).join(""):'<p style="color:var(--mu)">Koi form nahi.</p>'}
+function openD(id){cur=mem.forms.find(d=>d.id==id);drawD();mark();const b=$("delb");delete b.dataset.arm;b.textContent="Delete";b.style.background="#555";go("detail");$("detail").classList.remove("hide")}
+function drawD(){$("dbody").innerHTML=(cur.photo?`<img class="dp" src="${cur.photo}">`:"")+`<h2>${esc(cur.name)} <span class="b ${cur.status}">${cur.status}</span></h2>`+F.map(f=>`<div class="kv"><span>${f[1]}</span><span>${esc(cur[f[0]])}</span></div>`).join("")+`<div class="kv"><span>Submitted</span><span>${esc(cur.at)}</span></div>`}
+function quick(id,st){const d=mem.forms.find(x=>x.id==id);if(d){d.status=st;save();renderList();toast(d.name+": "+st)}}
+function toast(t){const e=$("toast");e.textContent=t;e.style.display="block";clearTimeout(e._t);e._t=setTimeout(()=>e.style.display="none",2200)}
+function mark(){document.querySelectorAll("#detail .acts button[data-s]").forEach(b=>b.classList.toggle("on",b.dataset.s==cur.status))}
+function setSt(s){cur.status=s;save();drawD();mark();toast("Status: "+s+" kar diya")}
+function del(){const b=$("delb");if(b.dataset.arm){mem.forms=mem.forms.filter(d=>d.id!=cur.id);save();toast("Form delete ho gaya");go("admin")}else{b.dataset.arm=1;b.textContent="Pakka delete? Dobara dabayein";b.style.background="#b00";setTimeout(()=>{delete b.dataset.arm;b.textContent="Delete";b.style.background="#555"},4000)}}
+
+// Dynamic ID Card Generator Function
+function printIDCard(){
+  if(!cur) return;
+  const win = window.open('', '_blank');
+  win.document.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset="utf-8">
+    <title>ID Card - ${esc(cur.name)}</title>
+    <style>
+      body { font-family: Arial, sans-serif; background: #eee; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+      .card { width: 320px; background: #0b0b0d; color: #eee; border: 2px solid #f2b51d; border-radius: 12px; padding: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+      .header { text-align: center; border-bottom: 1px solid #f2b51d; padding-bottom: 6px; margin-bottom: 10px; }
+      .header h1 { margin: 0; font-size: 20px; font-style: italic; color: #eee; }
+      .header h1 b { color: #f2b51d; }
+      .header small { font-size: 8px; color: #9a9aa3; letter-spacing: 2px; }
+      .photo { text-align: center; margin-bottom: 10px; }
+      .photo img { width: 90px; height: 110px; object-fit: cover; border: 2px solid #f2b51d; border-radius: 6px; }
+      .row { display: flex; justify-content: space-between; font-size: 11px; border-bottom: 1px dashed #333; padding: 4px 0; }
+      .row span:first-child { color: #9a9aa3; font-weight: bold; }
+      .row span:last-child { color: #fff; font-weight: bold; }
+      .badge { text-align: center; background: #f2b51d; color: #111; font-weight: bold; font-size: 10px; padding: 4px; margin-top: 10px; border-radius: 4px; letter-spacing: 2px; }
+      .footer { text-align: center; font-size: 9px; color: #f2b51d; font-style: italic; margin-top: 8px; font-weight: bold; }
+      @media print { body { background: white; } }
+    </style>
+    </head>
+    <body>
+      <div class="card">
+        <div class="header">
+          <h1>THUNDER <b>WOLF</b></h1>
+          <small>OFFICIAL MEMBER ID</small>
+        </div>
+        <div class="photo">
+          <img src="${cur.photo || ''}" alt="Photo">
+        </div>
+        <div class="row"><span>NAME:</span><span>${esc(cur.name)}</span></div>
+        <div class="row"><span>ID NO:</span><span>${esc(cur.idno)}</span></div>
+        <div class="row"><span>SECTOR:</span><span>${esc(cur.sector)}</span></div>
+        <div class="row"><span>THUNDER 1ST:</span><span>${esc(cur.t1)}</span></div>
+        <div class="row"><span>PHONE:</span><span>${esc(cur.phone)}</span></div>
+        <div class="badge">${cur.status.toUpperCase()} MEMBER</div>
+        <div class="footer">FAMILY IS FOREVER</div>
+      </div>
+      <script>
+        window.onload = function() { setTimeout(function() { window.print(); }, 500); }
+      <\/script>
+    </body>
+    </html>
+  `);
+  win.document.close();
+}
+
+go(location.hash=="#admin"?"login":"cand");
+</script></body></html>
